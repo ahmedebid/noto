@@ -91,6 +91,7 @@ button:focus {
 }
 
 .text-snippet {
+    display: block;
     padding-inline: 5px;
     font-size: 0.8rem;
     font-weight: 400;
