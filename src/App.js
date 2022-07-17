@@ -7,6 +7,11 @@ import {nanoid} from "nanoid"
 
 export default function App() {
 
+    /**
+     * Challenge: When the user edits a note, reposition
+     * it in the list of notes to the top of the list
+     */
+
     const [notes, setNotes] = React.useState(() => JSON.parse(localStorage.getItem("notes")) || [])
     
     const [currentNoteId, setCurrentNoteId] = React.useState(
@@ -26,12 +31,22 @@ export default function App() {
         setCurrentNoteId(newNote.id)
     }
     
+    // Update the current note and add it to the top of the notes list
     function updateNote(text) {
-        setNotes(oldNotes => oldNotes.map(oldNote => {
-            return oldNote.id === currentNoteId
-                ? { ...oldNote, body: text }
-                : oldNote
-        }))
+        setNotes(oldNotes => {
+            const updatedNotes = []
+            for (const oldNote of oldNotes) {
+                if (oldNote.id === currentNoteId) {
+                    /* Update the current note's body text stored in the 
+                    notes state array and add the note to the top of the 
+                    notes state array */
+                    updatedNotes.unshift({ ...oldNote, body: text })
+                } else {
+                    updatedNotes.push(oldNote)
+                }
+            }
+            return updatedNotes
+        })
     }
     
     function findCurrentNote() {
@@ -39,7 +54,7 @@ export default function App() {
             return note.id === currentNoteId
         }) || notes[0]
     }
-    
+
     return (
         <main>
         {
