@@ -20,16 +20,11 @@ button:focus {
 
 .pane {
     overflow-y: auto;
-    /* padding: 10px; */
 }
 
 .sidebar {
     width: 20%;
     height: 100vh;
-}
-
-.sidebar--note {
-    /* display: flex; */
 }
 
 .sidebar--header {
