@@ -92,14 +92,21 @@ button:focus {
 
 .text-snippet {
     display: block;
-    padding-inline: 5px;
+    padding: 0 50px 0 5px;
     font-size: 0.8rem;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.2rem;
     color: #4A4E74;
     white-space: nowrap;
+}
+
+.note-summary {
+    font-size: 0.7rem;
+    font-weight: 400;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 5px;
 }
 
 .selected-note {
