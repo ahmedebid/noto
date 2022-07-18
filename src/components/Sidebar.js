@@ -17,7 +17,12 @@ export default function Sidebar(props) {
                     className="delete-btn"
                     onClick={(event) => props.deleteNote(event, note.id)}
                 >
-                    <i className="gg-trash trash-icon"></i>
+                    <i 
+                        className={`gg-trash trash-icon ${
+                            note.id === props.currentNote.id ? "trash-white" : ""
+                        }`}
+                    >
+                    </i>
                 </button>
             </div>
         </div>
@@ -27,7 +32,7 @@ export default function Sidebar(props) {
     return (
         <section className="pane sidebar">
             <div className="sidebar--header">
-                <h3>Notes</h3>
+                <h3>My Notes</h3>
                 <button className="new-note" onClick={props.newNote}>+</button>
             </div>
             {noteElements}

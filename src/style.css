@@ -39,7 +39,7 @@ button:focus {
 
 .new-note {
     cursor: pointer;
-    background-color: #4A4E74;
+    background-color: #303A3F;
     border: none;
     color: white;
     border-radius: 3px;
@@ -49,7 +49,7 @@ button:focus {
 
 .first-note {
     cursor: pointer;
-    background-color: #4A4E74;
+    background-color: #303A3F;
     border: none;
     color: white;
     border-radius: 3px;
@@ -91,7 +91,7 @@ button:focus {
     font-size: 0.8rem;
     font-weight: 700;
     line-height: 1.2rem;
-    color: #4A4E74;
+    color: #303A3F;
     white-space: nowrap;
 }
 
@@ -105,12 +105,11 @@ button:focus {
 }
 
 .selected-note {
-    background-color: #4A4E74;
+    background-color: #303A3F;
 }
 
-.selected-note .text-snippet {
+.selected-note :where(.text-snippet, .note-summary) {
     color: white;
-    font-weight: 700;
 }
 
 .gutter {
@@ -157,6 +156,7 @@ button:focus {
 }
 
 .gg-trash {
+    color: #303A3F;
     box-sizing: border-box;
     position: relative;
     display: block;
@@ -199,4 +199,8 @@ button:focus {
     border-top-right-radius: 2px;
     top: -7px;
     left: -2px
+}
+
+.trash-white {
+    color: #fff;
 }
